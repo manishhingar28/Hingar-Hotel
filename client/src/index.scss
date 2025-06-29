@@ -1,0 +1,10 @@
+$dark: #123;
+$primary: #154858;
+$border-radius: 8pt;
+
+body {
+  // font-family: Georgia, Sans-Serif, Serif !important;
+}
+
+@import 'bootstrap/scss/bootstrap';
+@import './index.css';

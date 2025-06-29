@@ -1,0 +1,153 @@
+@import '../../mixins.scss';
+$background-color: #f0f0f0;
+$white-color: #ffffff;
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+$primary-color: #4285f4;
+$text-color: #777;
+$divider-color: #ddd;
+$font-family: "Brush Script MT", cursive;
+
+.signup-container {
+  display: flex;
+  height: 100%;
+  margin-top: 4rem;
+  background-color: $background-color;
+  overflow: hidden;
+  @include md{
+    flex-direction: column;
+  }
+  .signup-form {
+    background-color: $white-color;
+    box-shadow: $box-shadow;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow-y: auto;
+    @include md{
+      width: 100%;
+      padding: 1.3rem 0;
+    }
+    .signup-form-left {
+      padding: 0rem;
+      width: 70%;
+      @include md{
+        width: 85%;
+      }
+      .logo {
+        font-family: $font-family;
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        font-size: 1.2rem;
+      }
+
+      .google-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 0.5rem;
+        background-color: $primary-color;
+        color: $white-color;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        margin-bottom: 2rem;
+
+        img {
+          margin-right: 0.5rem;
+        }
+      }
+
+      .divider {
+        text-align: center;
+        margin: 1rem 0;
+        position: relative;
+        color: $text-color;
+        width: 100%;
+
+        &::before,
+        &::after {
+          content: "";
+          height: 1.5px;
+          background: rgb(84, 84, 84);
+          position: absolute;
+          top: 50%;
+          width: 30%;
+          @include md{
+            width: 20%;
+          }
+        }
+
+        &::before {
+          left: 0;
+        }
+
+        &::after {
+          right: 0;
+        }
+      }
+
+      .authform {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        input {
+          padding: 1rem;
+          margin-bottom: 1rem;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: 1rem;
+        }
+
+        .submit-button {
+          padding: 1rem;
+          background-color: #333;
+          color: $white-color;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 1rem;
+        }
+      }
+
+      p {
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+
+        a {
+          color: $primary-color;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  .background-image-Signin {
+    width: 50%;
+    height: 40rem;
+    @include md{
+      display: none;
+    }
+    img {
+      width: 100%;
+      height: 45rem;
+      object-fit: cover;
+    }
+  }
+}

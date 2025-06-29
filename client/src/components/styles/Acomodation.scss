@@ -1,0 +1,78 @@
+@import '../../mixins.scss';
+.acomodation_header {
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: 6%;
+    @include md{
+      margin-top:6rem;
+      &::before{
+        content: "";
+        display: block;
+        width: 90%;
+        height: 2px;
+        left: 5%;
+        background-color: rgb(79, 78, 78);
+        position: relative;
+        top: 4rem;
+      }
+    }
+  }
+  
+  .acomodation_container {
+    display: flex;
+    justify-content: space-evenly;
+    height: 600px;
+  
+    .acomodation_firstC, .acomodation_secondC, .acomodation_thirdC {
+      display: flex;
+      flex-direction: column;
+      width: 25%;
+      align-items: center;
+  
+      .img1, .img2, .img3 {
+        width: 100%;
+        height: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .img1 {
+        margin-bottom: 10%;
+      }
+      
+      .img2 {
+        margin-top: 10%;
+      }
+      
+      .img3 {
+        margin-bottom: 10%;
+      }
+  
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+  
+      .text1, .text2, .text3 {
+        width: 100%;
+        height: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: #154858;
+        font-size: 1.2rem;
+        padding: 10px;
+        box-sizing: border-box;
+        color: white;
+  
+        p {
+          margin: 5px 0;
+        }
+      }
+    }
+  }
+  

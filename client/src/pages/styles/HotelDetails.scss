@@ -1,0 +1,414 @@
+@import '../../mixins.scss';
+body {
+  margin: 0;
+  padding: 0;
+}
+body.no-scroll {
+  overflow: hidden;
+}
+.blur {
+  filter: blur(5px);
+  pointer-events: none;
+}
+.booking_form {
+  z-index: 99;
+  padding: 1rem;
+  width: 30%;
+  background-color: rgba(11, 26, 26, 0.99);
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  @include md{
+    width: 90%;
+    margin: 0 5%;
+    left: 1%;
+    top: 11%;
+  }
+  .cross {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    svg {
+      cursor: pointer;
+      color: white;
+      font-size: 1.1rem;
+    }
+  }
+
+  .header {
+    margin-bottom: 10%;
+    width: 70%;
+    text-align: center;
+    @include md{
+      width: 100%;
+    }
+    h2,h4 {
+      margin: 0;
+      color: white;
+    }
+  }
+
+  .inputForm {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      label {
+        margin-bottom: 15px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        font-size: 0.9rem;
+
+        select,
+        input {
+          margin-top: 5px;
+          padding: 8px;
+          width: 100%;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          font-size: 0.9rem;
+        }
+
+        select {
+          appearance: none;
+          background-color: white;
+          background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black"><path d="M4 6l4 4 4-4z"/></svg>');
+          background-repeat: no-repeat;
+          background-position: right 10px center;
+          background-size: 12px;
+          cursor: pointer;
+        }
+
+        input[type="date"] {
+          padding: 6px;
+        }
+      }
+    }
+  }
+
+  .btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    button {
+      background-color: yellow;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+      &:hover {
+        background-color: gold;
+      }
+    }
+  }
+}
+.hotel_main {
+  width: 100%;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  overflow-y: auto;
+  position: relative;
+  .hotel_Upper {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+
+    .left_1 {
+      position: relative;
+      width: 84%;
+      height: 100%;
+      margin-right: 0.5%;
+      @include md{
+        width: 100%;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+      .book-button {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        width: 10%;
+        transform: translate(-50%, -50%);
+        background-color: yellow;
+        color: black;
+        padding: 15px;
+        border-radius: 15px;
+        text-align: center;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        @include md{
+          width: 30%;
+        }
+      }
+    }
+    .right_1 {
+      height: 100%;
+      width: 15.5%;
+      @include md{
+        display: none;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .hotel_Lower {
+    width: 100%;
+    display: flex;
+    // height: 1300px;
+    position: relative;
+    margin-top: 10px;
+
+    .left_2 {
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      // padding-top: 8%;
+      align-items: center;
+
+      img {
+        height: 15%;
+        width: 60%;
+        object-fit: cover;
+        border: 5px solid brown;
+      }
+    }
+
+    .right_2 {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      @include md{
+        flex-direction: column;
+      }
+      
+      .top {
+        height: 30%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background-color: azure;
+        @include md{
+          flex-direction: column;
+        }
+        .hotel_details {
+          width: 80%;
+          height: 100%;
+          display: flex;
+          @include md{
+            width: 100%;
+            flex-direction: column;
+          }
+          .left_half {
+            width: 49%;
+            background-color: rgb(34, 79, 79);
+            padding: 30px;
+            color: white;
+            position: relative;
+            margin-right: 1%;
+            @include md{
+              width: 100%;
+            }
+            .texts {
+              width: 100%;
+              height: 100%;
+              h1 {
+                font-size: 1.5rem;
+              }
+              .left_half_book_button {
+                position: absolute;
+                right: 1%;
+                width: 25%;
+                margin-right: -10%;
+                transform: translate(-50%, -50%);
+                background-color: rgb(255, 232, 115);
+                color: black;
+                padding: 10px;
+                //  padding-left: 20px;
+                //  padding-right: 20px;
+                border-radius: 12px;
+                text-align: center;
+                border: none;
+                cursor: pointer;
+                text-decoration: none;
+                @include md{
+                  width: 40%;
+                  margin-right: -14%;
+                }
+              }
+            }
+          }
+
+          .right_half {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            @include md{
+              width: 100%;
+            }
+            .upper_part_right_half {
+              height: 50%;
+              width: 100%;
+              background-color: rgb(34, 79, 79);
+            }
+
+            .header_right_half {
+              height: 10%;
+              width: 100%;
+              position: absolute;
+            }
+
+            .lower_part_right_half {
+              height: 100%;
+              width: 100%;
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+        }
+
+        .hotel_images {
+          height: 100%;
+          width: 20%;
+           @include md{
+            width: 100%;
+           };
+          .upper_contain {
+            height: 50%;
+            width: 100%;
+            line-height: 0%;
+
+            img {
+              height: 95%;
+              width: 100%;
+            }
+          }
+
+          .lower_contain {
+            height: 50%;
+            width: 100%;
+            line-height: 0%;
+
+            img {
+              height: 100%;
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      .bottom {
+        display: flex;
+        border: 1px solid black;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        // height: 68%;
+        margin-top: 2%;
+        width: 99%;
+
+        .review {
+          width: 31%;
+          height: fit-content;
+          background-color: rgb(251, 251, 247);
+          // padding: 20px;
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin: 10px;
+          @include md{
+            width: 90%;
+          }
+          .star-icons {
+            margin-bottom: 10px;
+            color: darkorange;
+            font-size: 1.5rem;
+          }
+
+          .msg-icons {
+            font-size: 2rem;
+          }
+
+          p {
+            
+            text-align:justify;
+          }
+
+          strong {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  .image-row {
+    position: absolute;
+    height: 10%;
+    width: 83%;
+    top: 180px;
+    display: flex;
+    justify-content: space-around;
+    z-index: 10;
+    @include md{
+      display: none;
+    }
+    img {
+      height: 100%;
+      width: 15%;
+      object-fit: cover;
+      border: 5px solid brown;
+    }
+  }
+
+  .addreview {
+    margin-top: 1rem;
+    position: relative;
+    height: 2.5rem;
+
+    button {
+      position: absolute;
+      background-color: rgb(34, 79, 79);
+      left: 20%;
+      height: 100%;
+      width: 17rem;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}

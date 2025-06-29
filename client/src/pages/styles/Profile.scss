@@ -1,0 +1,128 @@
+@import '../../mixins.scss';
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-top: 5rem;
+
+  .profile-section,
+  .bookings-section {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    h2 {
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    .profile-details {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      input[type='text'],
+      input[type='email'],
+      textarea {
+        width: 100%;
+        padding: 8px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+      }
+
+      button {
+        grid-column: span 2;
+        padding: 10px 20px;
+        width: 60%;
+        align-self: center;
+        background-color: #4597ee;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #708dab;
+        }
+      }
+    }
+
+    table {
+      width: 100%;
+      max-width: 800px;
+      border-collapse: collapse;
+      margin-top: 20px;
+
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ccc;
+      }
+
+      th {
+        background-color: #6f777b;
+        color: white;
+      }
+      .mini{
+        @include md{
+          display: none;
+        }
+      }
+
+      tbody {
+        tr {
+          &:nth-child(even) {
+            background-color: #d2d2d2;
+          }
+
+          td {
+            .mini{
+              @include md{
+                display: none;
+              }
+            }
+            .status {
+              display: inline-block;
+              padding: 5px 10px;
+              border-radius: 4px;
+              font-weight: bold;
+              text-transform: uppercase;
+              .confirmed{
+                background-color: #28a745;
+                color: rgb(25, 170, 57);
+                
+              }
+              .paid {
+                background-color: #28a745;
+                color: rgb(25, 170, 57);
+              }
+              &.pending {
+                background-color: #007bff;
+                color: white;
+              }
+              
+              &.cancelled {
+                background-color: #dc3545;
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

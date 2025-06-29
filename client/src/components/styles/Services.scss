@@ -1,0 +1,175 @@
+@import '../../mixins.scss';
+.services_container {
+    height: 100vh;
+    display: flex;
+  
+  
+  .services_left,
+  .services_right {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  
+  .services_left {
+    width: 50%;
+    background-color: #154858;
+    color: #ffffff;
+  }
+  
+  .services_right {
+    width: 50%;
+    color: #000000;
+    background-color: #ffffff;
+  }
+  
+  .services_header_l,
+  .services_header_r {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    @include md{
+      flex-direction: column;
+    }
+  
+    h1 {
+      margin: 0 20px;
+      font-size: 3rem;
+    }
+  
+    hr {
+      position: absolute;
+      height: 1px;
+      background-color: #ffffff;
+      border: none;
+    }
+  }
+  
+  .services_header_l {
+    @include md{
+      display: none;
+    }
+    left: 42%;
+  
+    hr {
+      width: 100%;
+      right: 100%;
+      margin-right: 20px;
+      @include md{
+        width: 50%;
+        right: 50%;
+      }
+    }
+  }
+  
+  .services_header_r {
+    right: 35%;
+  
+    hr {
+      @include md{
+        display: none;
+      }
+      width: 100%;
+      left: 100%;
+      margin-left: 20px;
+      background-color: #000000;
+      @include md{
+        width: 20%;
+        right: 20%;
+      }
+    }
+  }
+  
+  .services_boxes1,
+  .services_boxes2,
+  .services_boxes3,
+  .services_boxes4 {
+    width: 30%;
+    height: 70%;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include md{
+      width: 80%;
+      height: 50%;
+      justify-content: unset;
+    }
+  }
+  
+  .services_boxes1 {
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    @include md{
+      left: 0;
+      top: 52%;
+      gap:0;
+    }
+  }
+  
+  .services_boxes2 {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    @include md{
+      top:10%;
+      left: 0;
+    }
+  }
+  
+  .services_boxes3 {
+    position: absolute;
+    right: 50%;
+    top: 20%;
+    @include md{
+      top: 10%;
+      right:0;
+    }
+  }
+  
+  .services_boxes4 {
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    @include md{
+      top: 55%;
+      right: 0;
+    }
+  }
+  
+  .services_box_u,
+  .services_box_d {
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    p {
+      margin: 0;
+      font-size: 1.2rem;
+      text-align: center;
+      @include md{
+        font-size:0.9rem;
+      }
+    }
+  }
+  .services_box_u{
+    @include md{
+      margin-bottom: 0.5rem;
+    }
+   }
+  .services_box_u {
+    background-color: #ffffff;
+    color: #154858;
+  }
+  
+  .services_box_d {
+    background-color: #154858;
+    color: #ffffff;
+  }
+}
